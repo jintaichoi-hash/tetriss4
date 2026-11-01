@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ice Hockey Game</title>
+  <meta name="google-adsense-account" content="ca-pub-8179129753758760">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8179129753758760"
+     crossorigin="anonymous"></script>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Harky Hockey</h1>
+      <nav>
+        <a href="#game-section" data-i18n="navPlay">Play</a>
+        <a href="#how-to-play" data-i18n="navHowToPlay">How to Play</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <button id="language-toggle" type="button" aria-label="Switch language">한국어</button>
+        <button id="theme-toggle">LIGHT MODE</button>
+        <button id="sound-toggle">SOUND: ON</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="game-section">
+      <div id="game-container">
+        <div id="start-overlay" class="overlay">
+          <h1 data-i18n="gameTitle">ICE HOCKEY</h1>
+          <button id="start-button" data-i18n="startGame">START GAME</button>
+        </div>
+        <div id="game-over-overlay" class="overlay hidden">
+          <h1 id="game-over-message"></h1>
+          <button id="restart-button" data-i18n="restart">RESTART</button>
+        </div>
+        <div class="scoreboard">
+          <div id="player-score">0</div>
+          <div class="score-divider">/ 5</div>
+        </div>
+        <div id="timer-display">02:00</div>
+        <div id="goal-notification" class="hidden" data-i18n="goal">GOAL!</div>
+        <div id="countdown-overlay" class="hidden"></div>
+        <canvas id="game-canvas"></canvas>
+      </div>
+    </section>
+
+    <section id="how-to-play" class="content-section">
+      <h2 data-i18n="howToPlay">How to Play</h2>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3 data-i18n="controls">Controls</h3>
+          <p data-i18n-html="controlsDescription">Use your <strong>mouse</strong> or <strong>touch</strong> to move your paddle. You can only move on your side of the rink.</p>
+        </div>
+        <div class="content-card">
+          <h3 data-i18n="objective">Objective</h3>
+          <p data-i18n-html="objectiveDescription">Score <strong>5 goals</strong> before the AI or before the timer runs out! Hit the puck with your paddle to send it toward the opponent's goal.</p>
+        </div>
+        <div class="content-card">
+          <h3 data-i18n="rules">Rules</h3>
+          <p data-i18n="rulesDescription">The game lasts for 3 minutes. If time runs out and you haven't scored 5 goals, the AI wins. Good luck!</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2 data-i18n="aboutTitle">About Harky Hockey</h2>
+      <p data-i18n="aboutDescription1">Harky Hockey is a fast-paced, arcade-style ice hockey game built with modern web technologies. Our goal is to provide a smooth, responsive, and fun gaming experience directly in your browser without any downloads required.</p>
+      <p data-i18n="aboutDescription2">Whether you're looking for a quick break or a challenging match against our AI, Harky Hockey offers an engaging way to test your reflexes and strategy.</p>
+    </section>
+
+    <section id="policy" class="content-section">
+      <h2 data-i18n="policies">Policies</h2>
+      <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('privacy')" data-i18n="privacyPolicy">Privacy Policy</button>
+        <button class="tab-btn" onclick="showTab('terms')" data-i18n="termsOfService">Terms of Service</button>
+      </div>
+      <div id="privacy" class="tab-content active">
+        <h3 data-i18n="privacyPolicy">Privacy Policy</h3>
+        <p data-i18n="privacyIntro">At Harky Hockey, we value your privacy. This policy explains how we handle your data:</p>
+        <ul>
+          <li data-i18n-html="privacyCollection"><strong>Information Collection:</strong> We do not collect any personal identification information (PII) from our users.</li>
+          <li data-i18n-html="privacyCookies"><strong>Cookies:</strong> We use local storage to remember your theme preference (Dark/Light mode). We do not use tracking cookies for personal profiling.</li>
+          <li data-i18n-html="privacyThirdParty"><strong>Third-party Services:</strong> We use Google AdSense to serve ads. Google may use cookies to serve ads based on your prior visits to this or other websites.</li>
+        </ul>
+      </div>
+      <div id="terms" class="tab-content">
+        <h3 data-i18n="termsOfService">Terms of Service</h3>
+        <p data-i18n="termsIntro">By using Harky Hockey, you agree to the following terms:</p>
+        <ul>
+          <li data-i18n-html="termsUsage"><strong>Usage:</strong> This game is for personal, non-commercial use only.</li>
+          <li data-i18n-html="termsDisclaimer"><strong>Disclaimer:</strong> The game is provided "as is" without any warranties. We are not responsible for any data loss or issues arising from use.</li>
+          <li data-i18n-html="termsChanges"><strong>Modifications:</strong> We reserve the right to update the game or these terms at any time.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AdSense Display Ad Section -->
+    <section id="ads-section" style="text-align: center; margin: 4rem 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-8179129753758760"
+           data-ad-slot="auto"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p data-i18n="copyright">&copy; 2026 Harky Hockey. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#privacy" data-i18n="privacyLink">Privacy</a>
+        <a href="#terms" data-i18n="termsLink">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+  <script defer type="text/javascript" src="/main.js"></script>
+</body>
+</html>
